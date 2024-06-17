@@ -20,19 +20,18 @@ struct SideBarView: View {
                         .tag(selection) // Check what tag does
                 }
             }
-            
+
             Section("Your Groups") {
                 ForEach($userCreatedgroups) { $group in
                     HStack {
                         Image(systemName: "folder")
                         TextField("New Group", text: $group.title)
                     }
-//                    Label(group.title, systemImage: "folder")
-                        .tag(TaskSection.list(group))
+                    .tag(TaskSection.list(group))
                 }
             }
         }
-        
+
         .safeAreaInset(edge: .bottom){
             Button(action: {
                 let newGroup: TaskGroup = TaskGroup(title: "New group")

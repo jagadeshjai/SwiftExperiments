@@ -21,7 +21,6 @@ struct ContentView: View {
                 switch selection {
                 case .all:
                     TaskListView(title: "All", tasks: $allTasks)
-//                    StaticTaskListView(title: "All", tasks: allTasks)
                 case .done:
                     StaticTaskListView(title: "Done", tasks: allTasks.filter({
                         $0.isCompleted}))
@@ -38,5 +37,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-//        .frame(width: 100, height: CGFloat(100), align ment: )
 }
